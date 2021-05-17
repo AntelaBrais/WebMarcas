@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tiny Houses</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <style>
+      html {
+        cursor: url("house.svg"), default;
+      }
+
+      .modal {
+        cursor: url("public/img/x-circle.svg"), default;
+      }
+
+      .card {
+        cursor: url("public/img/search.svg"), default;
+      }
+
+      .no-scroll {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .no-scroll::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+      }
+
+      /* The animation code */
+      @keyframes changeGradient {
+        0% {
+          background: linear-gradient(90deg, #007cf0, #00dfd8);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+        50% {
+          background: linear-gradient(90deg, #7928ca, #ff0080);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+        100% {
+          background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+          -webkit-text-fill-color: transparent;
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header style="position: sticky; top: 0; z-index: 1">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand"
+            href="#"
+            style="
+              animation-iteration-count: infinite;
+              animation-fill-mode: none;
+              animation-delay: 0s;
+              animation-name: changeGradient;
+              animation-duration: 4s;
+              animation-timing-function: ease;
+            "
+            >Tiny Houses</a
+          >
+
+          <button class="btn" type="submit">
+            <i class="bi-github" style="font-size: 1.5rem; color: #666"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        id="landingHero"
+        class="text-center border-bottom"
+        style="position: relative; height: 90vh; top: 0; left: 0; width: 100%"
+      >
+        <video
+          style="
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+          "
+          muted
+          autoplay
+          loop
+        >
+          <!-- <source src="./house_one.mp4" type="video/mp4" /> -->
+          <!-- <source src="./house_two.mp4" type="video/mp4" /> -->
+          <source src="./house_three.mp4" type="video/mp4" />
+        </video>
+
+        <div
+          style="
+            position: absolute;
+            background-attachment: fixed;
+            top: 50%;
+            right: 0;
+          "
+          class="px-5 col-lg-6 mx-auto"
+        >
+          <h1 class="display-4 fw-bold text-end">Diseño minimalista</h1>
+          <p class="lead mb-4 text-end">
+            Los hogares de Tiny Houses son diseñados por nosotros.
+            <br />
+            Optamos por la flexibilidad y libertad que supone ser responsable
+            del proceso desde los primeros bocetos hasta la construcción de tu
+            próximo hogar.
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-end mb-5">
+            <a href="#pricing">
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg px-4"
+                href="#pricing"
+              >
+                Explorar
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="px-4 py-5 my-5 text-center">
+          <i class="bi-house" style="font-size: 1.5rem; color: #666"></i>
+          <h1
+            class="display-5 fw-bold"
+            style="
+              background: linear-gradient(90deg, #007cf0, #00dfd8);
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+              background-clip: text;
+            "
+          >
+            El tamaño sí importa
+          </h1>
+          <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">
+              Quickly design and customize responsive mobile-first sites with
+              Bootstrap, the world’s most popular front-end open source toolkit,
+              featuring Sass variables and mixins, responsive grid system,
+              extensive prebuilt components, and powerful JavaScript plugins.
+            </p>
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">
+                Primary button
+              </button>
+              <button
+                type="button"
+                class="btn btn-outline-secondary btn-lg px-4"
+              >
+                Secondary
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background-color: #fafafa">
+        <div class="mx-0 py-5" id="custom-cards" style="right: 0; width: 100vw">
+          <div class="container px-4">
+            <h2 class="display-5 fw-bold">Para gustos, opciones</h2>
+          </div>
+
+          <div
+            class="
+              row-cols-1 row-cols-lg-3
+              align-items-stretch
+              py-5
+              mx-0
+              no-scroll
+            "
+            style="
+              overflow: auto;
+              white-space: nowrap;
+              scroll-snap-type: x mandatory;
+            "
+          >
+            <div
+              style="
+                display: inline-block;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+              "
+              class="card text-white mx-3"
+              data-bs-toggle="modal"
+              data-bs-target="#modeloCasaUno"
+            >
+              <img
+                src="./public/img/tiny_home_one.jpeg"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay text-end">
+                <h5 class="fs-1">Tanis</h5>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: inline-block;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+              "
+              class="card text-white mx-3"
+              data-bs-toggle="modal"
+              data-bs-target="#modeloCasaDos"
+            >
+              <img
+                src="./public/img/tiny_home_two.jpeg"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay text-end">
+                <h5 class="fs-1">Qantir</h5>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: inline-block;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+              "
+              class="card text-white mx-3"
+              data-bs-toggle="modal"
+              data-bs-target="#modeloCasaTres"
+            >
+              <img
+                src="./public/img/tiny_home_three.jpeg"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay text-end">
+                <h5 class="fs-1">Menfis</h5>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: inline-block;
+                scroll-snap-align: start;
+                scroll-snap-stop: always;
+              "
+              class="card text-white mx-3"
+              data-bs-toggle="modal"
+              data-bs-target="#modeloCasaCuatro"
+            >
+              <img
+                src="./public/img/tiny_home_four.jpeg"
+                class="card-img"
+                alt="..."
+              />
+              <div class="card-img-overlay text-end">
+                <h5 class="fs-1">Coptos</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: linear-gradient(90deg, #7928ca, #ff0080)">
+        <div class="container px-4 py-5" id="icon-grid">
+          <!-- Añadir animación de máquina de escribir -->
+          <h1 class="display-4 fw-bold mb-3 text-center text-white">
+            Muuuuucho con muy poco
+          </h1>
+
+          <div
+            class="
+              row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4
+              g-4
+              py-5
+              text-white
+            "
+          >
+            <div class="col d-flex align-items-start">
+              <i class="bi-bootstrap" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi-cpu-fill" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi-calendar3" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi-home" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi-speedometer2" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi-toogles2" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi-geo-fill" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi-tools" style="font-size: 1.75em"></i>
+              <div>
+                <h4 class="fw-bold mb-0">Featured title</h4>
+                <p>
+                  Paragraph of text beneath the heading to explain the heading.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="container px-4 py-5" id="featured-3">
+          <h2
+            class="display-4 fw-bold mb-3 text-center"
+            style="
+              background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+              -webkit-text-fill-color: transparent;
+              -webkit-background-clip: text;
+              background-clip: text;
+            "
+          >
+            Precios
+          </h2>
+          <div class="col-lg-8 mx-auto">
+            <p class="fs-5">
+              Si lo que necesitas es un hogar minimalista, que cumpla con las
+              requisitos básicos de cualquier hogar moderno, tienes las casas
+              "Minimal". Para los presupuestos y materiales más exquisitos,
+              tenemos las casas "Agora". Si lo que necesitas es algo más que un
+              hogar, elige "Luxor".
+            </p>
+            <br />
+          </div>
+          <hr />
+          <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div class="feature col px-4">
+              <h2 class="text-center">
+                Minimal
+                <sup
+                  ><i
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="Un hogar acogedor para nómadas digitales"
+                    class="bi-info-circle"
+                    style="font-size: 1rem; color: #999"
+                  ></i
+                ></sup>
+              </h2>
+              <div class="card shadow border-light p-4">
+                <table class="table mb-0">
+                  <thead style="background-color: #f0f0f0">
+                    <tr>
+                      <th
+                        style="border-radius: 0.25rem 0 0 0.25rem"
+                        class="border-0"
+                      >
+                        Nombre
+                      </th>
+                      <th
+                        style="border-radius: 0 0.25rem 0.25rem 0"
+                        class="border-0"
+                      >
+                        Tipo
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Presupuesto</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Confección de presupuesto sin compromiso"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Diseño</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Diseño arquitectónico del hogar"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ensamblaje</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Entrega en lugar de construcción y preparación de módulos"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Gestión terreno</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Búsqueda, compra y gestión de trámites catastrales"
+                          class="bi-x-circle"
+                          style="font-size: 1.5rem; color: #f50057"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ampliación modular</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Futuras ampliaciones modulares a coste de material"
+                          class="bi-x-circle"
+                          style="font-size: 1.5rem; color: #f50057"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Construcción</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Construcción e instalación de los servicios básicos de vivienda"
+                          class="bi-x-circle"
+                          style="font-size: 1.5rem; color: #f50057"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center" colspan="2">
+                        <button type="button" class="btn btn-outline-primary">
+                          <i class="bi-bag-check" style="color: inherit"></i>
+                          Comprar
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="feature col px-4">
+              <h2 class="text-center">
+                Agora
+                <sup
+                  ><i
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="Comodidades para algo más que el día a día"
+                    class="bi-info-circle"
+                    style="font-size: 1rem; color: #999"
+                  ></i
+                ></sup>
+              </h2>
+              <div class="card shadow border-light p-4">
+                <table class="table mb-0">
+                  <thead style="background-color: #f0f0f0">
+                    <tr>
+                      <th
+                        style="border-radius: 0.25rem 0 0 0.25rem"
+                        class="border-0"
+                      >
+                        Nombre
+                      </th>
+                      <th
+                        style="border-radius: 0 0.25rem 0.25rem 0"
+                        class="border-0"
+                      >
+                        Tipo
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Presupuesto</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Confección de presupuesto sin compromiso"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Diseño</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Diseño arquitectónico del hogar"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ensamblaje</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Entrega en lugar de construcción y preparación de módulos"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Gestión terreno</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Búsqueda, compra y gestión de trámites catastrales"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ampliación modular</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Futuras ampliaciones modulares a coste de material"
+                          class="bi-x-circle"
+                          style="font-size: 1.5rem; color: #f50057"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Construcción</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Construcción e instalación de los servicios básicos de vivienda"
+                          class="bi-x-circle"
+                          style="font-size: 1.5rem; color: #f50057"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center" colspan="2">
+                        <button type="button" class="btn btn-outline-primary">
+                          <i class="bi-bag-check" style="color: inherit"></i>
+                          Comprar
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="feature col px-4">
+              <h2 class="text-center">
+                Luxor
+                <sup
+                  ><i
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="top"
+                    title="El hogar más exclusivo"
+                    class="bi-info-circle"
+                    style="font-size: 1rem; color: #999"
+                  ></i
+                ></sup>
+              </h2>
+              <div class="card shadow border-light p-4">
+                <table class="table table-hover mb-0">
+                  <thead style="background-color: #f0f0f0">
+                    <tr>
+                      <th
+                        style="border-radius: 0.25rem 0 0 0.25rem"
+                        class="border-0"
+                      >
+                        Nombre
+                      </th>
+                      <th
+                        style="border-radius: 0 0.25rem 0.25rem 0"
+                        class="border-0"
+                      >
+                        Tipo
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Presupuesto</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Confección de presupuesto sin compromiso"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Diseño</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Diseño arquitectónico del hogar"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ensamblaje</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Entrega en lugar de construcción y preparación de módulos"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Gestión terreno</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Búsqueda, compra y gestión de trámites catastrales"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Ampliación modular</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Futuras ampliaciones modulares a coste de material"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Construcción</td>
+                      <td>
+                        <i
+                          data-bs-toggle="tooltip"
+                          data-bs-placement="top"
+                          title="Construcción e instalación de los servicios básicos de vivienda"
+                          class="bi-check2-circle"
+                          style="font-size: 1.5rem; color: #00b157"
+                        ></i>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="text-center" colspan="2">
+                        <button type="button" class="btn btn-outline-primary">
+                          <i class="bi-bag-check" style="color: inherit"></i>
+                          Comprar
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contactForm" class="container col-xl-10 col-xxl-8 px-4 py-5">
+        <div class="row align-items-center g-lg-5 py-5">
+          <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 mb-3">
+              Nos encantaría escucharte
+            </h1>
+            <p class="col-lg-10 fs-4">
+              Puedes enviarnos un mensaje para que podemos despejar tus dudas, o
+              concertar una cita presencial. Se te enviará una copia a tu correo
+              electrónico de tu mensaje para que puedas revisarlo cuando
+              quieras.
+            </p>
+          </div>
+          <div class="col-md-10 mx-auto col-lg-5">
+            <form class="p-4 p-md-5 border rounded-3 bg-light">
+              <div class="form-floating mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="floatingInput"
+                  placeholder="name@example.com"
+                />
+                <label for="floatingInput">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                <textarea
+                  class="form-control"
+                  id="mensajeForm"
+                  style="height: 100px"
+                  placeholder="Mensaje"
+                ></textarea>
+                <label for="mensajeForm">Mensaje</label>
+              </div>
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="recordar" /> Recuérdame
+                </label>
+              </div>
+              <button class="w-100 btn btn-lg btn-primary" type="submit">
+                Sign up
+              </button>
+              <hr class="my-4" />
+              <small class="text-muted"
+                >Al enviar el mensaje aceptas los términos de uso.</small
+              >
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section style="background-color: #fafafa">
+      <footer class="container py-3 pt-4 my-0 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <i class="bi-house" style="font-size: 1rem; color: #666"></i>
+            <!-- TODO: Hacer fecha dinámica -->
+            <small class="d-block mb-3 text-muted">&copy; 2021</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Features</h5>
+            <ul class="list-unstyled text-small">
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Cool stuff</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Random feature</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Team feature</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Stuff for developers</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Another one</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Last time</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Catálogo</h5>
+            <ul class="list-unstyled text-small">
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Minimal</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Agora</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Luxor</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Sobre Tiny</h5>
+            <ul class="list-unstyled text-small">
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Equipo</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Localizaciones</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Privacidad</a
+                >
+              </li>
+              <li class="mb-1">
+                <a class="link-secondary text-decoration-none" href="#"
+                  >Términos y Condiciones</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- Modal -->
+    <!-- Modelo Casa Uno -->
+    <div
+      class="modal fade"
+      id="modeloCasaUno"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
+        <div class="modal-content">
+          <div
+            class="modal-body"
+            style="
+              background-image: url('./public/img/tiny_home_one.jpeg');
+              background-size: cover;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modelo Casa Dos -->
+    <div
+      class="modal fade"
+      id="modeloCasaDos"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
+        <div class="modal-content">
+          <div
+            class="modal-body"
+            style="
+              background-image: url('./public/img/tiny_home_two.jpeg');
+              background-size: cover;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modelo Casa Uno -->
+    <div
+      class="modal fade"
+      id="modeloCasaTres"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
+        <div class="modal-content">
+          <div
+            class="modal-body"
+            style="
+              background-image: url('./public/img/tiny_home_three.jpeg');
+              background-size: cover;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modelo Casa Uno -->
+    <div
+      class="modal fade"
+      id="modeloCasaCuatro"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
+        <div class="modal-content">
+          <div
+            class="modal-body"
+            style="
+              background-image: url('./public/img/tiny_home_four.jpeg');
+              background-size: cover;
+            "
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      )
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+      })
+    </script>
+  </body>
+</html>
