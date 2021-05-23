@@ -179,3 +179,7 @@ thead {
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
+
+.mucho-con-poco {
+  background: linear-gradient(90deg, #7928ca, #ff0080);
+}
