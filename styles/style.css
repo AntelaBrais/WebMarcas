@@ -137,8 +137,10 @@ tr > th:nth-child(2) {
   overflow: hidden;
   margin: 0 auto;
   white-space: nowrap;
+  animation-delay: 4s;
   border-right: 0.15em solid white;
-  animation: typing 3.5s steps(40, end);
+  animation: typing 3.5s steps(40, end) infinite;
+  animation-direction: alternate;
 }
 
 @keyframes typing {
