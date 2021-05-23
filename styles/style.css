@@ -183,3 +183,7 @@ thead {
 .mucho-con-poco {
   background: linear-gradient(90deg, #7928ca, #ff0080);
 }
+
+.feature-icon {
+  font-size: 1.75em;
+}
