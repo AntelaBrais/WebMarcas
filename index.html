@@ -15,73 +15,22 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
-    <style>
-      html {
-        cursor: url("house.svg"), default;
-      }
-
-      .modal {
-        cursor: url("public/img/x-circle.svg"), default;
-      }
-
-      .card {
-        cursor: url("public/img/search.svg"), default;
-      }
-
-      .no-scroll {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
-
-      .no-scroll::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
-      }
-
-      /* The animation code */
-      @keyframes changeGradient {
-        0% {
-          background: linear-gradient(90deg, #007cf0, #00dfd8);
-          -webkit-text-fill-color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-        50% {
-          background: linear-gradient(90deg, #7928ca, #ff0080);
-          -webkit-text-fill-color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-        100% {
-          background: linear-gradient(90deg, #ff4d4d, #f9cb28);
-          -webkit-text-fill-color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./styles/style.css" />
   </head>
 
   <body>
-    <header style="position: sticky; top: 0; z-index: 1">
+    <header class="header">
       <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
         <div class="container-fluid">
-          <a
-            class="navbar-brand"
-            href="#"
-            style="
-              animation-iteration-count: infinite;
-              animation-fill-mode: none;
-              animation-delay: 0s;
-              animation-name: changeGradient;
-              animation-duration: 4s;
-              animation-timing-function: ease;
-            "
-            >Tiny Houses</a
-          >
+          <a class="navbar-brand" href="#">Tiny Houses</a>
 
-          <button class="btn" type="submit">
-            <i class="bi-github" style="font-size: 1.5rem; color: #666"></i>
-          </button>
+          <a
+            class="btn"
+            href="https://github.com/AntelaBrais/WebMarcas"
+            target="_blank"
+          >
+            <i class="bi-github" class="navbar-icon"></i>
+          </a>
         </div>
       </nav>
     </header>
@@ -89,26 +38,9 @@
     <main>
       <section
         id="landingHero"
-        class="text-center border-bottom"
-        style="position: relative; height: 90vh; top: 0; left: 0; width: 100%"
+        class="text-center border-bottom landing-section"
       >
-        <video
-          style="
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.3;
-          "
-          muted
-          autoplay
-          loop
-        >
-          <!-- <source src="./house_one.mp4" type="video/mp4" /> -->
-          <!-- <source src="./house_two.mp4" type="video/mp4" /> -->
-          <source src="./house_three.mp4" type="video/mp4" />
-        </video>
+        <video id="video" muted autoplay src="./house_three.mp4"></video>
 
         <div
           style="
@@ -144,15 +76,7 @@
       <section>
         <div class="px-4 py-5 my-5 text-center">
           <i class="bi-house" style="font-size: 1.5rem; color: #666"></i>
-          <h1
-            class="display-5 fw-bold"
-            style="
-              background: linear-gradient(90deg, #007cf0, #00dfd8);
-              -webkit-text-fill-color: transparent;
-              -webkit-background-clip: text;
-              background-clip: text;
-            "
-          >
+          <h1 class="display-5 fw-bold size-matters-heading">
             El tamaño sí importa
           </h1>
           <div class="col-lg-6 mx-auto">
@@ -190,22 +114,14 @@
               py-5
               mx-0
               no-scroll
-            "
-            style="
-              overflow: auto;
-              white-space: nowrap;
-              scroll-snap-type: x mandatory;
+              card-container
             "
           >
             <div
-              style="
-                display: inline-block;
-                scroll-snap-align: start;
-                scroll-snap-stop: always;
-              "
-              class="card text-white mx-3"
+              class="card text-white mx-3 card-horizontal-scroll"
               data-bs-toggle="modal"
               data-bs-target="#modeloCasaUno"
+              id="cardCasaUno"
             >
               <img
                 src="./public/img/tiny_home_one.jpeg"
@@ -226,6 +142,7 @@
               class="card text-white mx-3"
               data-bs-toggle="modal"
               data-bs-target="#modeloCasaDos"
+              id="cardCasaDos"
             >
               <img
                 src="./public/img/tiny_home_two.jpeg"
@@ -246,6 +163,7 @@
               class="card text-white mx-3"
               data-bs-toggle="modal"
               data-bs-target="#modeloCasaTres"
+              id="cardCasaTres"
             >
               <img
                 src="./public/img/tiny_home_three.jpeg"
@@ -266,6 +184,7 @@
               class="card text-white mx-3"
               data-bs-toggle="modal"
               data-bs-target="#modeloCasaCuatro"
+              id="cardCasaCuatro"
             >
               <img
                 src="./public/img/tiny_home_four.jpeg"
@@ -283,7 +202,7 @@
       <section style="background: linear-gradient(90deg, #7928ca, #ff0080)">
         <div class="container px-4 py-5" id="icon-grid">
           <!-- Añadir animación de máquina de escribir -->
-          <h1 class="display-4 fw-bold mb-3 text-center text-white">
+          <h1 class="display-4 fw-bold mb-3 text-center text-white typewriter">
             Muuuuucho con muy poco
           </h1>
 
@@ -296,7 +215,7 @@
             "
           >
             <div class="col d-flex align-items-start">
-              <i class="bi-bootstrap" style="font-size: 1.75em"></i>
+              <i class="bi-bootstrap p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -305,7 +224,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <i class="bi-cpu-fill" style="font-size: 1.75em"></i>
+              <i class="bi-cpu-fill p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -314,7 +233,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <i class="bi-calendar3" style="font-size: 1.75em"></i>
+              <i class="bi-calendar3 p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -323,7 +242,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <i class="bi-home" style="font-size: 1.75em"></i>
+              <i class="bi-house p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -332,7 +251,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <i class="bi-speedometer2" style="font-size: 1.75em"></i>
+              <i class="bi-speedometer2 p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -341,7 +260,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <i class="bi-toogles2" style="font-size: 1.75em"></i>
+              <i class="bi-gear p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -350,7 +269,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <i class="bi-geo-fill" style="font-size: 1.75em"></i>
+              <i class="bi-geo-fill p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -359,7 +278,7 @@
               </div>
             </div>
             <div class="col d-flex align-items-start">
-              <i class="bi-tools" style="font-size: 1.75em"></i>
+              <i class="bi-tools p-3" style="font-size: 1.75em"></i>
               <div>
                 <h4 class="fw-bold mb-0">Featured title</h4>
                 <p>
@@ -373,19 +292,11 @@
 
       <section id="pricing">
         <div class="container px-4 py-5" id="featured-3">
-          <h2
-            class="display-4 fw-bold mb-3 text-center"
-            style="
-              background: linear-gradient(90deg, #ff4d4d, #f9cb28);
-              -webkit-text-fill-color: transparent;
-              -webkit-background-clip: text;
-              background-clip: text;
-            "
-          >
+          <h2 class="display-4 fw-bold mb-3 text-center price-heading">
             Precios
           </h2>
           <div class="col-lg-8 mx-auto">
-            <p class="fs-5">
+            <p class="fs-5 text-center">
               Si lo que necesitas es un hogar minimalista, que cumpla con las
               requisitos básicos de cualquier hogar moderno, tienes las casas
               "Minimal". Para los presupuestos y materiales más exquisitos,
@@ -413,18 +324,8 @@
                 <table class="table mb-0">
                   <thead style="background-color: #f0f0f0">
                     <tr>
-                      <th
-                        style="border-radius: 0.25rem 0 0 0.25rem"
-                        class="border-0"
-                      >
-                        Nombre
-                      </th>
-                      <th
-                        style="border-radius: 0 0.25rem 0.25rem 0"
-                        class="border-0"
-                      >
-                        Tipo
-                      </th>
+                      <th class="border-0">Nombre</th>
+                      <th class="border-0">Tipo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -435,8 +336,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Confección de presupuesto sin compromiso"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -447,8 +347,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Diseño arquitectónico del hogar"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -459,8 +358,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Entrega en lugar de construcción y preparación de módulos"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -471,8 +369,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Búsqueda, compra y gestión de trámites catastrales"
-                          class="bi-x-circle"
-                          style="font-size: 1.5rem; color: #f50057"
+                          class="bi-x-circle x-icon"
                         ></i>
                       </td>
                     </tr>
@@ -483,8 +380,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Futuras ampliaciones modulares a coste de material"
-                          class="bi-x-circle"
-                          style="font-size: 1.5rem; color: #f50057"
+                          class="bi-x-circle x-icon"
                         ></i>
                       </td>
                     </tr>
@@ -495,8 +391,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Construcción e instalación de los servicios básicos de vivienda"
-                          class="bi-x-circle"
-                          style="font-size: 1.5rem; color: #f50057"
+                          class="bi-x-circle x-icon"
                         ></i>
                       </td>
                     </tr>
@@ -529,18 +424,8 @@
                 <table class="table mb-0">
                   <thead style="background-color: #f0f0f0">
                     <tr>
-                      <th
-                        style="border-radius: 0.25rem 0 0 0.25rem"
-                        class="border-0"
-                      >
-                        Nombre
-                      </th>
-                      <th
-                        style="border-radius: 0 0.25rem 0.25rem 0"
-                        class="border-0"
-                      >
-                        Tipo
-                      </th>
+                      <th class="border-0">Nombre</th>
+                      <th class="border-0">Tipo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -551,8 +436,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Confección de presupuesto sin compromiso"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -563,8 +447,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Diseño arquitectónico del hogar"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -575,8 +458,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Entrega en lugar de construcción y preparación de módulos"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -587,8 +469,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Búsqueda, compra y gestión de trámites catastrales"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -599,8 +480,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Futuras ampliaciones modulares a coste de material"
-                          class="bi-x-circle"
-                          style="font-size: 1.5rem; color: #f50057"
+                          class="bi-x-circle x-icon"
                         ></i>
                       </td>
                     </tr>
@@ -611,8 +491,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Construcción e instalación de los servicios básicos de vivienda"
-                          class="bi-x-circle"
-                          style="font-size: 1.5rem; color: #f50057"
+                          class="bi-x-circle x-icon"
                         ></i>
                       </td>
                     </tr>
@@ -643,20 +522,10 @@
               </h2>
               <div class="card shadow border-light p-4">
                 <table class="table table-hover mb-0">
-                  <thead style="background-color: #f0f0f0">
+                  <thead>
                     <tr>
-                      <th
-                        style="border-radius: 0.25rem 0 0 0.25rem"
-                        class="border-0"
-                      >
-                        Nombre
-                      </th>
-                      <th
-                        style="border-radius: 0 0.25rem 0.25rem 0"
-                        class="border-0"
-                      >
-                        Tipo
-                      </th>
+                      <th class="border-0">Nombre</th>
+                      <th class="border-0">Tipo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -667,8 +536,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Confección de presupuesto sin compromiso"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -679,8 +547,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Diseño arquitectónico del hogar"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -691,8 +558,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Entrega en lugar de construcción y preparación de módulos"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -703,8 +569,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Búsqueda, compra y gestión de trámites catastrales"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -715,8 +580,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Futuras ampliaciones modulares a coste de material"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -727,8 +591,7 @@
                           data-bs-toggle="tooltip"
                           data-bs-placement="top"
                           title="Construcción e instalación de los servicios básicos de vivienda"
-                          class="bi-check2-circle"
-                          style="font-size: 1.5rem; color: #00b157"
+                          class="bi-check2-circle check-icon"
                         ></i>
                       </td>
                     </tr>
@@ -803,9 +666,8 @@
       <footer class="container py-3 pt-4 my-0 pt-md-5 border-top">
         <div class="row">
           <div class="col-12 col-md">
-            <i class="bi-house" style="font-size: 1rem; color: #666"></i>
-            <!-- TODO: Hacer fecha dinámica -->
-            <small class="d-block mb-3 text-muted">&copy; 2021</small>
+            <i class="bi-house footer-icon"></i>
+            <small id="year" class="d-block mb-3 text-muted"></small>
           </div>
           <div class="col-6 col-md">
             <h5>Features</h5>
@@ -902,13 +764,7 @@
     >
       <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
         <div class="modal-content">
-          <div
-            class="modal-body"
-            style="
-              background-image: url('./public/img/tiny_home_one.jpeg');
-              background-size: cover;
-            "
-          ></div>
+          <div class="modal-body modal-body-first-house"></div>
         </div>
       </div>
     </div>
@@ -923,13 +779,7 @@
     >
       <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
         <div class="modal-content">
-          <div
-            class="modal-body"
-            style="
-              background-image: url('./public/img/tiny_home_two.jpeg');
-              background-size: cover;
-            "
-          ></div>
+          <div class="modal-body modal-body-second-house"></div>
         </div>
       </div>
     </div>
@@ -944,13 +794,7 @@
     >
       <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
         <div class="modal-content">
-          <div
-            class="modal-body"
-            style="
-              background-image: url('./public/img/tiny_home_three.jpeg');
-              background-size: cover;
-            "
-          ></div>
+          <div class="modal-body modal-body-third-house"></div>
         </div>
       </div>
     </div>
@@ -965,13 +809,7 @@
     >
       <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
         <div class="modal-content">
-          <div
-            class="modal-body"
-            style="
-              background-image: url('./public/img/tiny_home_four.jpeg');
-              background-size: cover;
-            "
-          ></div>
+          <div class="modal-body modal-body-fourth-house"></div>
         </div>
       </div>
     </div>
@@ -983,12 +821,39 @@
     ></script>
 
     <script>
-      var tooltipTriggerList = [].slice.call(
+      let currentDate = new Date()
+
+      document.querySelector(
+        "#year"
+      ).innerHTML = `&copy; ${currentDate.getFullYear()}`
+
+      let tooltipTriggerList = [].slice.call(
         document.querySelectorAll('[data-bs-toggle="tooltip"]')
       )
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
       })
+
+      let videoSourceOne = "./house_one.mp4"
+
+      let videoSourceTwo = "./house_two.mp4"
+
+      let videoSourceThree = "./house_three.mp4"
+
+      let videoSources = [videoSourceOne, videoSourceTwo, videoSourceThree]
+
+      let j = 0
+
+      setInterval(() => {
+        if (j > 2) {
+          j = 0
+        }
+        document.getElementById("video").src = videoSources[j]
+        document.getElementById("video").load()
+        document.getElementById("video").play()
+        j++
+        console.log(j)
+      }, 10000)
     </script>
   </body>
 </html>

@@ -1,0 +1,181 @@
+html {
+  cursor: url("../house.svg"), default;
+}
+
+.modal {
+  cursor: url("../public/img/x-circle.svg"), default;
+}
+
+#cardCasaUno,
+#cardCasaDos,
+#cardCasaTres,
+#cardCasaCuatro {
+  cursor: url("../public/img/search.svg"), default;
+}
+
+.no-scroll {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* The animation code */
+@keyframes changeGradient {
+  33% {
+    background: linear-gradient(90deg, #007cf0, #00dfd8);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  66% {
+    background: linear-gradient(90deg, #7928ca, #ff0080);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  100% {
+    background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar-brand {
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+  animation-name: changeGradient;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+}
+
+.navbar-icon {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+.landing-section {
+  position: relative;
+  height: 90vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+video {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.modal-body-first-house {
+  background-image: url("../public/img/tiny_home_one.jpeg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.modal-body-second-house {
+  background-image: url("../public/img/tiny_home_two.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.modal-body-third-house {
+  background-image: url("../public/img/tiny_home_three.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.modal-body-fourth-house {
+  background-image: url("../public/img/tiny_home_four.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.footer-icon {
+  font-size: 1rem;
+  color: #666;
+}
+
+td > i {
+  font-size: 1.5rem;
+}
+
+td > .check-icon {
+  color: #00b157;
+}
+
+td > .x-icon {
+  color: #f50057;
+}
+
+tr > th:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+tr > th:nth-child(2) {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.typewriter {
+  overflow: hidden;
+  margin: 0 auto;
+  white-space: nowrap;
+  border-right: 0.15em solid white;
+  animation: typing 3.5s steps(40, end);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.price-heading {
+  background: linear-gradient(90deg, #ff4d4d, #f9cb28);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.size-matters-heading {
+  background: linear-gradient(90deg, #007cf0, #00dfd8);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+thead {
+  background-color: #f0f0f0;
+}
+
+.card-container {
+  overflow: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.card-horizontal-scroll {
+  display: inline-block;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
