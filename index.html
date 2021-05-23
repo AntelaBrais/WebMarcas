@@ -172,16 +172,6 @@
         </div>
       </section>
 
-      <iframe
-        width="450"
-        height="250"
-        frameborder="0"
-        style="border: 0"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBvbxF_L9UEvqSLNK9v3I4gzeldcrIWmvE&q=Eiffel+Tower,Paris+France"
-        allowfullscreen
-      >
-      </iframe>
-
       <section class="mucho-con-poco">
         <div class="container px-4 py-5" id="icon-grid">
           <h1 class="display-4 fw-bold mb-3 text-center text-white typewriter">
@@ -368,7 +358,12 @@
                     </tr>
                     <tr>
                       <td class="text-center" colspan="2">
-                        <button type="button" class="btn btn-outline-primary">
+                        <button
+                          data-bs-toggle="modal"
+                          data-bs-target="#paymentModal"
+                          type="button"
+                          class="btn btn-outline-primary"
+                        >
                           <i class="bi-bag-check" style="color: inherit"></i>
                           Comprar
                         </button>
@@ -468,7 +463,12 @@
                     </tr>
                     <tr>
                       <td class="text-center" colspan="2">
-                        <button type="button" class="btn btn-outline-primary">
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#paymentModal"
+                        >
                           <i class="bi-bag-check" style="color: inherit"></i>
                           Comprar
                         </button>
@@ -568,7 +568,12 @@
                     </tr>
                     <tr>
                       <td class="text-center" colspan="2">
-                        <button type="button" class="btn btn-outline-primary">
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#paymentModal"
+                        >
                           <i class="bi-bag-check" style="color: inherit"></i>
                           Comprar
                         </button>
@@ -596,7 +601,11 @@
             </p>
           </div>
           <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-light">
+            <form
+              class="p-4 p-md-5 border rounded-3 bg-light"
+              method="POST"
+              action="mailto:braantela@gmail.com"
+            >
               <div class="form-floating mb-3">
                 <input
                   type="email"
@@ -621,14 +630,42 @@
                 </label>
               </div>
               <button class="w-100 btn btn-lg btn-primary" type="submit">
-                Sign up
+                Enviar
               </button>
               <hr class="my-4" />
-              <small class="text-muted"
-                >Al enviar el mensaje aceptas los términos de uso.</small
-              >
+              <small class="text-muted">
+                Al enviar el mensaje aceptas los términos de uso.
+              </small>
             </form>
           </div>
+        </div>
+      </section>
+
+      <section class="bg-dark">
+        <div
+          class="container px-0 py-0"
+          style="
+            height: 50vh;
+            display: flex;
+            flex-direction: row;
+            margin-left: 0;
+          "
+        >
+          <!-- <iframe
+            width="100%"
+            height="100%"
+            frameborder="0"
+            style="border: 0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBvbxF_L9UEvqSLNK9v3I4gzeldcrIWmvE&q=Eiffel+Tower,Paris+France"
+            allowfullscreen
+          >
+          </iframe> -->
+          <h1
+            class="display-4 fw-bold lh-1 mb-3 text-end text-white"
+            style="justify-self: flex-end; align-self: flex-end"
+          >
+            Pásate y te invitamos al café
+          </h1>
         </div>
       </section>
     </main>
@@ -641,37 +678,25 @@
             <small id="year" class="d-block mb-3 text-muted"></small>
           </div>
           <div class="col-6 col-md">
-            <h5>Features</h5>
+            <h5>Tiny Houses</h5>
             <ul class="list-unstyled text-small">
               <li class="mb-1">
                 <a class="link-secondary text-decoration-none" href="#"
-                  >Cool stuff</a
+                  >Diseño</a
                 >
               </li>
               <li class="mb-1">
                 <a class="link-secondary text-decoration-none" href="#"
-                  >Random feature</a
+                  >Colaboraciones</a
                 >
               </li>
               <li class="mb-1">
                 <a class="link-secondary text-decoration-none" href="#"
-                  >Team feature</a
+                  >Desarrolladores</a
                 >
               </li>
               <li class="mb-1">
-                <a class="link-secondary text-decoration-none" href="#"
-                  >Stuff for developers</a
-                >
-              </li>
-              <li class="mb-1">
-                <a class="link-secondary text-decoration-none" href="#"
-                  >Another one</a
-                >
-              </li>
-              <li class="mb-1">
-                <a class="link-secondary text-decoration-none" href="#"
-                  >Last time</a
-                >
+                <a class="link-secondary text-decoration-none" href="#">Blog</a>
               </li>
             </ul>
           </div>
@@ -781,6 +806,175 @@
       <div class="modal-dialog modal-fullscreen" data-bs-dismiss="modal">
         <div class="modal-content">
           <div class="modal-body modal-body-fourth-house"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de pago -->
+    <div
+      class="modal fade"
+      id="paymentModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered p">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Pago</h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="my-3">
+                <div class="form-check">
+                  <input
+                    id="credit"
+                    name="paymentMethod"
+                    type="radio"
+                    class="form-check-input"
+                    checked
+                    required
+                  />
+                  <label class="form-check-label" for="credit">
+                    Tarjeta de crédito
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    id="debit"
+                    name="paymentMethod"
+                    type="radio"
+                    class="form-check-input"
+                    required
+                  />
+                  <label class="form-check-label" for="debit">
+                    Tarjeta de débito
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    id="paypal"
+                    name="paymentMethod"
+                    type="radio"
+                    class="form-check-input"
+                    required
+                  />
+                  <label class="form-check-label" for="paypal">PayPal</label>
+                </div>
+              </div>
+
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label for="cc-name" class="form-label">
+                    Nombre en la tarjeta
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-name"
+                    placeholder=""
+                    required
+                  />
+                  <small class="text-muted">
+                    El nombre completo que aparece en la tarjeta
+                  </small>
+                  <div class="invalid-feedback">El nombre es obligatorio</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="cc-number" class="form-label">
+                    Número de tarjeta
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="cc-number"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    El número de la tarjeta es obligatorio
+                  </div>
+                </div>
+
+                <div class="col-lg-5">
+                  <label for="cc-expiration" class="form-label">
+                    Caducidad
+                  </label>
+                  <input
+                    type="month"
+                    class="form-control"
+                    id="cc-expiration"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    La fecha de caducidad es obligatoria
+                  </div>
+                </div>
+
+                <div class="col-md-3">
+                  <label for="cc-cvv" class="form-label">CVV</label>
+                  <input
+                    type="number"
+                    min="000"
+                    max="999"
+                    class="form-control"
+                    id="cc-cvv"
+                    placeholder=""
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    El código de seguridad es obligatorio
+                  </div>
+                </div>
+              </div>
+
+              <hr class="my-4" />
+
+              <button
+                class="w-100 btn btn-primary btn-lg"
+                data-bs-target="#securityModal"
+                data-bs-toggle="modal"
+                data-bs-dismiss="modal"
+              >
+                Conseguir tu nuevo hogar
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Security Modal -->
+    <div
+      class="modal fade"
+      id="securityModal"
+      aria-hidden="true"
+      aria-labelledby="securityModal"
+      tabindex="-1"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header" style="justify-content: space-around">
+            <h2 class="display-4 text-center" id="exampleModalToggleLabel2">
+              🎉🥳
+              <br />
+              Enhorabuena!!
+              <br />
+              🥳🎉
+            </h2>
+          </div>
+          <div class="modal-body text-center">
+            En breves te llegará un correo con las instrucciones para conseguir
+            las llaves de tu nuevo hogar 🏠🔑.
+          </div>
         </div>
       </div>
     </div>

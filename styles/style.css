@@ -6,6 +6,11 @@ html {
   cursor: url("../public/img/x-circle.svg"), default;
 }
 
+.modal,
+.payment {
+  cursor: url("../house.svg"), default;
+}
+
 #cardCasaUno,
 #cardCasaDos,
 #cardCasaTres,
